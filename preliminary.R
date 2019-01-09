@@ -1,8 +1,8 @@
 library("dplyr")
 library("magrittr")
-setwd("c:/Users/moar82/Documents/momit/")
-
-df<-read.csv("c:/Users/moar82/Documents/momit/results_benchmark_primeSimple_clean.csv")
+#setwd("c:/Users/moar82/Documents/momit/")
+setwd("~/gitrepos/momit_data/")
+df<-read.csv("results_benchmark_primeSimple_clean.csv")
 
 df_group<-df %>%
   group_by(id,value,feature_size,mem_us,size_delta,mem_delta,) %>%
@@ -11,3 +11,34 @@ df_group<-df %>%
 summary(df_group)
 
 colnames(df)
+pdf("boxplot_prelim.pdf",height = 8.5, width =11)
+
+boxplot(df_group$size_delta,df_group$mem_delta,df_group$`median(time_delta)`,
+        names = c('File size','Memory usage', 'Execution time'))
+dev.off()
+
+coef_var_file_size<- sd(df_group$size_delta)/mean(df_group$size_delta)
+coef_var_mem_us<- sd(df_group$mem_delta)/mean(df_group$mem_delta)
+coef_var_exec_time<- sd(df_group$`median(time_delta)`)/mean(df_group$`median(time_delta)`)
+
+coef_var_metrics<- c(coef_var_file_size,coef_var_mem_us,coef_var_exec_time)
+
+for (coef in  coef_var_metrics) print (coef)
+
+# let's remove the outlier of time delta to observe more detail on the time_delta boxplot.
+
+time_delta<-df_group$`median(time_delta)`[df_group$`median(time_delta)`<0]
+
+
+boxplot(df_group$size_delta,df_group$mem_delta,time_delta,
+        names = c('File size','Memory usage', 'Execution time'))
+
+mem_delta_f<-df_group$mem_delta[df_group$mem_delta>-30]
+
+boxplot(df_group$size_delta,mem_delta_f,time_delta,
+        names = c('File size','Memory usage', 'Execution time'))
+
+
+outvals<-boxplot(df_group$size_delta,
+                 plot=F)$out
+which(df_group$size_delta %in% outvals)
