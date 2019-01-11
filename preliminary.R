@@ -39,6 +39,35 @@ boxplot(df_group$size_delta,mem_delta_f,time_delta,
         names = c('File size','Memory usage', 'Execution time'))
 
 
-outvals<-boxplot(df_group$size_delta,
+outvals_file_size<-boxplot(df_group$size_delta,
                  plot=F)$out
 which(df_group$size_delta %in% outvals)
+
+length (df_group$size_delta[df_group$size_delta!=0])
+
+length (df_group$mem_delta[df_group$mem_delta!=0])
+
+length (df_group$`median(time_delta)`[df_group$`median(time_delta)`!=0])
+
+
+outvals_mem_us<-boxplot(df_group$mem_delta,
+                 plot=F)$out
+
+df_noimpact<- df_group[which (df_group$size_delta==0 & df_group$mem_delta==0 &
+                                df_group$`median(time_delta)`==0),]
+
+df_gth5<-df_group[which (df_group$size_delta>=5 | df_group$mem_delta>=5 |
+                  df_group$`median(time_delta)`>=5),]
+
+df_lth5<-df_group[which (df_group$size_delta<=-10 | df_group$mem_delta<=-10 |
+                  df_group$`median(time_delta)`<=-10),]
+
+df_major_concern<-merge(df_lth5,df_gth5)
+
+#probably it is better to select different threshold for
+#time delta, since the median is ~-11
+# I suggest to use the outliers for that purpose
+
+
+
+
