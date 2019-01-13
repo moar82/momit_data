@@ -59,8 +59,8 @@ df_noimpact<- df_group[which (df_group$size_delta==0 & df_group$mem_delta==0 &
 df_gth5<-df_group[which (df_group$size_delta>=5 | df_group$mem_delta>=5 |
                   df_group$`median(time_delta)`>=5),]
 
-df_lth5<-df_group[which (df_group$size_delta<=-10 | df_group$mem_delta<=-10 |
-                  df_group$`median(time_delta)`<=-10),]
+df_lth5<-df_group[which (df_group$size_delta<=-5 | df_group$mem_delta<=-5 |
+                  df_group$`median(time_delta)`<=-5),]
 
 df_major_concern<-merge(df_lth5,df_gth5)
 
@@ -68,6 +68,12 @@ df_major_concern<-merge(df_lth5,df_gth5)
 #time delta, since the median is ~-11
 # I suggest to use the outliers for that purpose
 
+outvals_time_delta<-boxplot(df_group$`median(time_delta)`,
+                        plot=F)$out
+which(df_group$`median(time_delta)` %in% outvals_time_delta)
 
 
+#just execution time
+df_time_delta_gth5<-df_group[which (df_group$`median(time_delta)`>=5),]
 
+df_time_delta_lth5<-df_group[which (df_group$`median(time_delta)`<=-5),]
