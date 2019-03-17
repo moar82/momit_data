@@ -1,7 +1,7 @@
 rm(list = ls())
 library("dplyr")
 library("magrittr")
-#setwd("c:/Users/moar82/Documents/momit/")
+#setwd("c:/Users/moar82/Documents/momit/") this is for my tablet
 setwd("~/gitrepos/momit_data/")
 df<-read.csv("results_benchmark_primeSimple_clean.csv")
 
@@ -15,7 +15,7 @@ colnames(df)
 pdf("boxplot_prelim.pdf",height = 8.5, width =11)
 
 boxplot(df_group$size_delta,df_group$mem_delta,df_group$`median(time_delta)`,
-        names = c('File size','Memory usage', 'Execution time'))
+        names = c('Code size','Memory usage', 'Execution time'))
 dev.off()
 
 coef_var_file_size<- sd(df_group$size_delta)/mean(df_group$size_delta)
