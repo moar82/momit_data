@@ -1,0 +1,25 @@
+JS test,\delta CS ,\delta MU ,\delta ET ,NDA ,new dev.
+3d-cube,-5.67,-55.51,-31.71,1,4
+3d-morph,-12.56,-67.26,-34.78,1,4
+3d-raytrace,-28.19,-15.89,-8,0,3
+access-binary-trees,-7.64,-49.63,-31.91,1,4
+access-fannkuch,-30.13,-53.94,-36.7,1,4
+access-nbody,-30.67,-50.93,-37.35,1,4
+access-nsieve,-30.94,-68.45,-35.71,1,4
+bitops-3bit-bits-in-byte,24.72,-82.61,-27.27,1,4
+bitops-bits-in-byte,-33.62,-69.53,-76.34,1,4
+bitops-bitwise-and,-34.57,-75.94,-34.12,0,4
+bitops-nsieve-bits,-31.21,-66.62,-34.19,1,4
+controlflow-recursive,-33.89,-63.58,-19.05,1,4
+crypto-aes,-28.97,4.56,-26.6,1,4
+crypto-md5,-31.59,-35.54,-60.56,1,4
+crypto-sha1,-24.58,-51.31,-41.18,1,4
+date-format-tofte,-31.03,-92.93,-55.14,2,4
+date-format-xparb,-30.59,-25.78,-37.31,1,4
+math-cordic,-35.57,-61.37,-43.16,1,4
+math-partial-sums,-36.58,-62.58,-49.49,1,4
+math-spectral-norm,-9.06,-63.18,-42.11,1,4
+string-base64,-32.1,-22.8,-24.14,0,3
+string-fasta,-28.62,-50.11,-37.14,1,4
+string-validate-input,-29.53,-11.34,-12.43,2,4
+Total Median ,-30.59,-55.51,-35.71,1,4

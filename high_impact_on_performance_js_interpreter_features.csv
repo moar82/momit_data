@@ -1,0 +1,11 @@
+﻿id,name,description,value,size_delta,mem_delta,median(time_delta)
+3,DUK_USE_EXEC_PREFER_SIZE,Prefer size over perfonace in bytecode executor,TRUE,-11.71,0,9.15
+7 to 10,Divers (Store objects in ROM),Compile built-ins objects and strings and constants in the Read-Only Memory space at the cost of file size,TRUE,25.21,-87.93,-13.41
+86,DUK_USE_REGEXP_CANON_WORKAROUND,Use a 128kB lookup table for improving RegExp processing performance at the cost of file footprint,FALSE,23.59,0,-14.63
+5,DUK_USE_LIGHTFUNC_BUILTINS,Force built-in functions to be lightweight functions. This reduces memory footprint by around 14 kB at the cost of some non-compliant behavior.,TRUE,0,-37.43,-12.805
+43,DUK_USE_BUFFEROBJECT_SUPPORT,"Enable support for Khronos/ES6 typed arrays and Node.js Buffer objects. This includes all ArrayBuffer, typed array, and Node.js Buffer methods.",FALSE,-4.18,-21.39,-14.02
+19,DUK_USE_DATE_BUILTIN,Provide a Date built-in,FALSE,-0.11,-11.13,-13.41
+11,DUK_USE_REFERENCE_COUNTING,Use Automatic Reference Counting for Memory management to remove objects that are no longer needed,FALSE,-6.79,10.62,-12.2
+84,DUK_USE_FASTINT,"Enable support for 48-bit signed ""fastint"" integer values. Fastints are transparent to user code (both C and Ecmascript) but may be faster than IEEE doubles on some platforms. The downside of fastints is increased code footprint and a small performance penalty for some kinds of code.",TRUE,6.67,0,-23.17
+15,DUK_USE_ARRAY_BUILTIN,Provide an Array built-in.,TRUE,-1.7,-4.85,-15.85
+6,DUK_USE_PREFER_SIZE,Catch-all flag which can be used to choose between variant algorithms where a speed-size tradeoff exists (e.g. lookup tables). ,TRUE,-0.76,-0.03,94.51
