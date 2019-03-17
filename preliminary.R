@@ -1,3 +1,4 @@
+rm(list = ls())
 library("dplyr")
 library("magrittr")
 #setwd("c:/Users/moar82/Documents/momit/") this is for my tablet
