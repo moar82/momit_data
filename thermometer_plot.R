@@ -6,12 +6,6 @@ setwd("/home/moar82/Documents/iot_miniaturization/")
 PATH = "median_improvements_merged.csv"
 OUTPUT = "PerformanceImprovement_MoMIT.pdf"
 
-
-source("theme_complete_bw.R")
-
-fmt = function(x) { format(round(x, digits = 2), digits = 2) }
-
-
 data = read.csv(PATH)
 data <-data[!(data$JS.test=="Total Median"), ]
 
