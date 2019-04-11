@@ -1,0 +1,24 @@
+JS test,Compulsory features,js_engine_size,Memory usage (KB),Execution time (Sec.)
+3d-cube,15; 29; 34;31,569088,166.496,0.205
+3d-morph,15; 29,569088,132,0.46
+3d-raytrace,15; 19; 29;31,569088,387.936,0.25
+access-binary-trees,29,569088,179.44,0.235
+access-fannkuch,15;31;34,569088,132.704,0.47
+access-nbody,15; 29,569088,146.848,0.415
+access-nsieve,15,569088,131.296,0.14
+bitops-3bit-bits-in-byte,,569088,128.176,0.44
+bitops-bits-in-byte,,569088,128.528,0.465
+bitops-bitwise-and,,569088,126.144,1.275
+bitops-nsieve-bits,15,569088,130.624,0.775
+controlflow-recursive,,569088,184.832,0.21
+crypto-aes,15; 19; 29; 34; 32,569088,178.216,0.21
+crypto-md5,15; 34;32,569088,176.544,0.355
+crypto-sha1,15; 34;32,569088,163.088,0.34
+date-format-tofte,15; 19;24;31;34;32;7;8;9;10,569088,1817.2,0.535
+date-format-xparb,19;24;31;34;32;7;8;9;10,569088,183.824,0.335
+math-cordic,19,569088,132.72,0.475
+math-partial-sums,29,569088,129.968,0.495
+math-spectral-norm,29,569088,144.24,0.19
+string-base64,29; 34;32,569088,275.632,0.725
+string-fasta,15; 34;32,569088,140.064,0.875
+string-validate-input,15; 29; 34;32,569088,614.464,1.16
