@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 rm(list = ls())
-setwd("/home/moar82/Documents/iot_miniaturization/")
+setwd("/home/moar82/gitrepos/momit_data")
 
 
 PATH = "median_improvements_merged.csv"
@@ -55,9 +55,9 @@ data <-data[!(data$JS.test=="crypto-aes" ), ]
 pdf("thermoteter.pdf",height = 8.5, width =11)
 symbols(delta_CSp, delta_MUp, thermometers = cbind(.5, 1, delta_etp/100), inches = .5, fg = 2,
         main="Thermometer Plot with fill proportional to execution time improvement",
-        ylab="Memory usage Improvement",
-        xlab="Code size improvement")
-text(delta_CSp, delta_MUp, JS.test, cex=0.6)
+        ylab="Memory usage Improvement (%)",
+        xlab="Code size improvement (%)")
+text(delta_CSp, delta_MUp, JS.test, cex=0.6) #ommit if you do not want to show the name of the systems
 dev.off()
 
 
