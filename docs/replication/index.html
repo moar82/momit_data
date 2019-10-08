@@ -33,17 +33,16 @@ title: Replication Package
 <h2>Research Questions and scripts </h2>
 <p>In this section we briefly explain which scripts runs to replicate each of the RQ formulated in the manuscript</p>
 
-<p>For generating the results of the three RQs formulated in the paper,&nbsp; itis necessary to execute MoMIT on SunSpider testbed. You can&nbsp; obtain a copy of Sunspider from&nbsp;&nbsp;<a href="https://hg.mozilla.org/projects/kraken" target="_blank" rel="noopener">kraken </a> (another test suite based on sunspider). The benchkmar is located in the folder <strong>kraken/tests/sunspiderxx</strong>, where xx is SunSpider version.</p>
+<p>For generating the results of the three RQs formulated in the paper,&nbsp; it is necessary to execute MoMIT on SunSpider testbed. You can&nbsp; obtain a copy of Sunspider from&nbsp;<a href="https://hg.mozilla.org/projects/kraken" target="_blank" rel="noopener">kraken </a> (another test suite based on sunspider). The benchkmark is located in the folder <strong>kraken/tests/sunspiderxx</strong>, where xx is SunSpider version.</p>
 <p>We provide a different .sh bash script for each search algorithm:</p>
 <p>For RS+:</p>
-<p><a href="https://github.com/moar82/jMetalPy/tree/master/iot/run_spider_testbed_rs.sh">https://github.com/moar82/jMetalPy/tree/master/iot/run_spider_testbed_rs.sh</a>/</p>
+<p><a href="https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed_rs.sh">https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed_rs.sh</a>/</p>
 <p>For NSGA-II:</p>
-<p><a href="https://github.com/moar82/jMetalPy/tree/master/iot/run_spider_testbed.sh">https://github.com/moar82/jMetalPy/tree/master/iot/run_spider_testbed.sh</a>/</p>
+<p><a href="https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed.sh">https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed.sh</a>/</p>
 <p>For SWAY:</p>
 <p><a href="https://github.com/moar82/jMetalPy/blob/master/iot/sway/Experiments/run_sunspider_testbed_sway.sh">https://github.com/moar82/jMetalPy/blob/master/iot/sway/Experiments/run_sunspider_testbed_sway.sh</a></p>
 <p>*Note that these scripts assume that you unzip all .js tests in the same folder of the script.</p>
-<p>**RS+ and NSGA-II were implemented using JMetalPy, while SWAY was implemented using <a href="https://deap.readthedocs.io/en/master/" target="_blank" rel="noopener">DEAP</a> framework.</p>
-<p>(RQ3) Can MoMIT miniaturize apps involving thirdparty<br />libraries?</p>
-<p>***To answer this RQ, we extended&nbsp;&nbsp;one of the JS tests in RQs 1 and 2<br />(date-format-tofte) to format and manipulate numbers using<br /><a href="http://numeraljs.com/" target="_blank" rel="noopener">Numeral</a>.js from Node.js.&nbsp; &nbsp; For this purpose we included a module.ini, where you can enter the third-party library that you want to include in your code, and modified harness.c to perform this task and resolve the references to that library.</p>
-<p>****To convert solution files (VAR) to duktape configuration file (yaml) use the python script a href="https://github.com/moar82/jMetalPy/blob/master/iot/var_2_yaml.py" target="_blank" rel="noopener">&nbsp;var_2_yaml.py</a></p>
-<p>&nbsp;</p>
+<p>**RS+ and NSGA-II were implemented using <a href="https://github.com/jMetal/jMetalPy" target="_blank" rel="noopener">JMetalPy</a>, while SWAY was implemented using <a href="https://deap.readthedocs.io/en/master/" target="_blank" rel="noopener">DEAP</a> framework.</p>
+<p>(RQ3) Can MoMIT miniaturize apps involving third-party<br />libraries?</p>
+<p>***To answer this RQ, we extended&nbsp;&nbsp;one of the JS tests in RQs 1 and 2 (date-format-tofte) to format and manipulate numbers using<br /><a href="http://numeraljs.com/" target="_blank" rel="noopener">Numeral</a>.js from Node.js.&nbsp; &nbsp; For this purpose, we included a configuration file (module.ini), where you can enter the third-party library that you want to include in your code.  We also modified harness.c to resolve the references to that library.</p>
+<p>****To convert solution files (VAR) to duktape configuration file (yaml) use the python script <a href="https://github.com/moar82/jMetalPy/blob/master/iot/var_2_yaml.py" target="_blank" rel="noopener">var_2_yaml.py</a></p>
