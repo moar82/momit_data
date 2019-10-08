@@ -23,7 +23,7 @@ title: Replication Package
 
   <li> <a href="https://github.com/moar82/momit_data/tree/master/pf_250_evals_raw" target="_blank">MoMIT Pareto Front SunSpider  250 evaluations, raw values.</a>
      <li> <a href="https://github.com/moar82/momit_data/tree/master/pf_250_ev_percentage_change" target="_blank">MoMIT Pareto Front Sunspider  250 evaluations, percent changed values.</a>
-	 <li> <a href="https://github.com/moar82/momit_data/tree/master/3obj-1500-all-algo" target="_blank">MoMIT objectives function evaluations 3d-cube.js and access-fannkuch.js  15,000 evaluations with solutions.</a>
+	 <li> <a href="https://github.com/moar82/momit_data/tree/master/third-party-library/date-format-tofte-plus-pop250-4obj" target="_blank">MoMIT objectives function evaluations 3d-cube.js and access-fannkuch.js  15,000 evaluations with solutions.</a>
 	 <li> <a href="https://github.com/moar82/momit_data/tree/master/third-party-library" target="_blank">MoMIT miniaturization using third-Party library results (RS+).</a>
 
 </ul>
@@ -41,8 +41,10 @@ title: Replication Package
 <p><a href="https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed.sh">https://github.com/moar82/jMetalPy/blob/master/iot/run_sunspider_testbed.sh</a>/</p>
 <p>For SWAY:</p>
 <p><a href="https://github.com/moar82/jMetalPy/blob/master/iot/sway/Experiments/run_sunspider_testbed_sway.sh">https://github.com/moar82/jMetalPy/blob/master/iot/sway/Experiments/run_sunspider_testbed_sway.sh</a></p>
+<h3>(RQ3) Can MoMIT miniaturize apps involving third-party<br />libraries?</h3>
+<p>To answer this RQ, we extended&nbsp;&nbsp;one of the JS tests in RQs 1 and 2 (date-format-tofte) to format and manipulate numbers using<br /><a href="http://numeraljs.com/" target="_blank" rel="noopener">Numeral</a>.js from Node.js.&nbsp; &nbsp; For this purpose, we included a configuration file (module.ini), where you can enter the third-party library that you want to include in your code.  We also modified harness.c to resolve the references to that library.</p>
+< /br>
 <p>*Note that these scripts assume that you unzip all .js tests in the same folder of the script.</p>
 <p>**RS+ and NSGA-II were implemented using <a href="https://github.com/jMetal/jMetalPy" target="_blank" rel="noopener">JMetalPy</a>, while SWAY was implemented using <a href="https://deap.readthedocs.io/en/master/" target="_blank" rel="noopener">DEAP</a> framework.</p>
-<p>(RQ3) Can MoMIT miniaturize apps involving third-party<br />libraries?</p>
-<p>***To answer this RQ, we extended&nbsp;&nbsp;one of the JS tests in RQs 1 and 2 (date-format-tofte) to format and manipulate numbers using<br /><a href="http://numeraljs.com/" target="_blank" rel="noopener">Numeral</a>.js from Node.js.&nbsp; &nbsp; For this purpose, we included a configuration file (module.ini), where you can enter the third-party library that you want to include in your code.  We also modified harness.c to resolve the references to that library.</p>
 <p>****To convert solution files (VAR) to duktape configuration file (yaml) use the python script <a href="https://github.com/moar82/jMetalPy/blob/master/iot/var_2_yaml.py" target="_blank" rel="noopener">var_2_yaml.py</a></p>
+
