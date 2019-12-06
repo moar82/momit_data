@@ -2,7 +2,8 @@ rm(list = ls())
 library("dplyr")
 library("magrittr")
 #setwd("c:/Users/moar82/Documents/momit/") this is for my tablet
-setwd("~/gitrepos/momit_data/")
+#setwd("~/gitrepos/momit_data/")
+setwd("c:/Users/rod_mor/Documents/gitrepos/momit_data/")
 df<-read.csv("results_benchmark_primeSimple_clean.csv")
 
 df_group<-df %>%
@@ -11,12 +12,26 @@ df_group<-df %>%
 
 summary(df_group)
 
+df_groupFiltered<-df_group[which (df_group$mem_delta > -30 ),]
+df_groupFiltered<-subset(df_groupFiltered,`median(time_delta)`<50)
+summary(df_groupFiltered)
+
 colnames(df)
-pdf("boxplot_prelim.pdf",height = 8.5, width =11)
+pdf("boxplot_prelim_no_outliers.pdf",height = 8.5, width =11)
 
 boxplot(df_group$size_delta,df_group$mem_delta,df_group$`median(time_delta)`,
-        names = c('Code size','Memory usage', 'Execution time'))
+        names = c('Code size','Memory usage', 'Execution time'),outline=F, horizontal=F)
 dev.off()
+
+pdf("boxplot_prelim_20percent.pdf",height = 8.5, width =11)
+boxplot(df_groupFiltered$size_delta,df_groupFiltered$mem_delta,df_groupFiltered$`median(time_delta)`,
+        names = c('Code size','Memory usage', 'Execution time'),outline=T, horizontal=F)
+dev.off()
+
+subset(df_group, mem_delta < -20)
+subset(df_group, size_delta > 10)
+
+
 
 coef_var_file_size<- sd(df_group$size_delta)/mean(df_group$size_delta)
 coef_var_mem_us<- sd(df_group$mem_delta)/mean(df_group$mem_delta)
