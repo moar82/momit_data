@@ -17,10 +17,18 @@ df_groupFiltered<-subset(df_groupFiltered,`median(time_delta)`<50)
 summary(df_groupFiltered)
 
 colnames(df)
+
+pdf("boxplot_prelim.pdf",height = 8.5, width =11)
+
+boxplot(df_group$size_delta,df_group$mem_delta,df_group$`median(time_delta)`,
+        names = c('Code size','Memory usage', 'CPU time'),outline=T, horizontal=F)
+dev.off()
+
+
 pdf("boxplot_prelim_no_outliers.pdf",height = 8.5, width =11)
 
 boxplot(df_group$size_delta,df_group$mem_delta,df_group$`median(time_delta)`,
-        names = c('Code size','Memory usage', 'Execution time'),outline=F, horizontal=F)
+        names = c('Code size','Memory usage', 'CPU time'),outline=F, horizontal=F)
 dev.off()
 
 pdf("boxplot_prelim_20percent.pdf",height = 8.5, width =11)
